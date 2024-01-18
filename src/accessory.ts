@@ -199,7 +199,7 @@ export class DaikinCloudAirConditioningAccessory {
         await this.accessory.context.device.updateData();
         const temperature = this.accessory.context.device.getData('climateControl', 'sensoryData', '/roomTemperature').value;
         this.platform.log.debug(`[${this.name}] GET CurrentTemperature, temperature: ${temperature}`);
-        return temperature;
+        return temperature-5;
     }
 
     async handleCoolingThresholdTemperatureGet(): Promise<CharacteristicValue> {
